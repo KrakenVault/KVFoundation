@@ -8,7 +8,7 @@
 import Foundation
 
 public final class KVJSONDecoder {
-	static func decode<T: Decodable>(from fileName: String, in bundle: Bundle) -> T? {
+	public static func decode<T: Decodable>(from fileName: String, in bundle: Bundle) -> T? {
 		guard let jsonFilePath = bundle.path(forResource: fileName, ofType: "json") else { return nil }
 		do {
 			let data = try Data(contentsOf: URL(fileURLWithPath: jsonFilePath), options: .mappedIfSafe)
